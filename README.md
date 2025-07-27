@@ -32,10 +32,16 @@ npm install --global nodemon
 npm install express sequelize mysql2
 ```
 
+> [!CAUTION]
+> ควรเข้าไปในโฟลเดอร์ที่จะติดตั้งก่อน จึงจะใช้งาน `npm install`
+
 4. เปิดเซิฟเวอร์
 ```
 npm run dev
 ```
+
+> [!WARNING]
+> `npm` สามารถใช้ได้แค่ใน `command promt` ไม่สามารถใช้งานได้ใน `power shell`
 
 ## โครงสร้างไฟล์
 
@@ -315,7 +321,9 @@ app.get('/:<ชื่อ parameter>', ...)
 ```
 
 การดึงข้อมูลจาก Parameter
+
 Ex `/product/1` '1' คือ parameter
+
 
 ```
 req.params.<ชื่อของ parameter>;
@@ -326,6 +334,7 @@ req.params.<ชื่อของ parameter>;
 app.get('/product:<ชื่อ parameter>', ...)
 ```
 Ex `/product?id=1`
+
 
 การดึงข้อมูลจาก Query parameter
 ```
