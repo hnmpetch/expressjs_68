@@ -249,6 +249,11 @@ async function getAllproduct(req, res) {
 }
 ```
 
+> [!TIP]
+> `.json` คือการส่งออกข้อมูลและจัดให้อยู่ในรูปแบบ JSON
+> `.send` คือการส่งข้อมูลแบบ Text
+> `.status` คิอการกำหนด status code โดยมีค่าเริ่มต้นเป็น 200
+
 
 > [!TIP]
 > async คือฟังชั่นแบบทำตามขั้นตอน ใช้ร่วมกับ await เพื่อบอกส่วนอื่นๆในฟังชั่นว่าให้ฟังชั่นนี้เสร็จก่อนค่อยทำอันอื่น
@@ -288,3 +293,113 @@ router.delete('/:code', products.deleteProduct);
 
 > [!TIP]
 > CURD คือประเภทของ API มี GET, POST, DELETE, PUT, CREATE, อื่นๆ
+
+## คำสั่งที่ใช้งานเป็นประจำ
+
+การกำหนดค่าตัวแปร
+```
+const <ชื่อตัวแปร> // แบบคงที่
+let <ชื่อตัวแปร> // แบบแก้ไขได้
+```
+
+### การขอข้อมูลจาก Request
+การดึงข้อมูลจาก Body
+```
+req.body;
+```
+
+
+การกำหนดชื่อ parameter
+```
+app.get('/:<ชื่อ parameter>', ...)
+```
+
+การดึงข้อมูลจาก Parameter
+Ex `/product/1` '1' คือ parameter
+
+```
+req.params.<ชื่อของ parameter>;
+```
+
+การกำหนดชื่อ Querey parameter
+```
+app.get('/product:<ชื่อ parameter>', ...)
+```
+Ex `/product?id=1`
+
+การดึงข้อมูลจาก Query parameter
+```
+const { <ชื่อของ Query> } = req.query;
+```
+
+### การดึงข้อมูลจาก table
+
+การดึงข้อมูลทั้งหมด
+```
+<ชื่อของ table>.findAll()
+```
+
+การดึงข้อมูลแบบเลือก
+```
+<ชื่อของ table>.findAll({
+    where: {
+        <ชื่อของคอลัม>: <สิ่งที่ต้องการหา>
+    }
+})
+```
+
+การดึงข้อมูลแบบเลือก
+```
+<ชื่อของ table>.findAll({
+    where: {
+        <ชื่อของคอลัม>: <สิ่งที่ต้องการหา>
+    },
+    order: [[
+        <ชื่อของคอลัม>: <รูปแบบการเรียงข้อมูล>
+    ]],
+    attributes: [
+        <ชื่อของคอลัมที่ต้องการ 1>,
+        <ชื่อของคอลัมที่ต้องการ 2>,
+        <ชื่อของคอลัมที่ต้องการ ...>,
+    ]
+})
+```
+
+Ex.1
+```
+const product = await Product.findAll({
+    where: { id: 1 },
+    order: [['date', 'DESC']],
+    attributes: ['id', 'date', 'title', 'content'],
+});
+```
+
+### การใช้งาน git
+
+การส่งข้อมูลขึ้น git
+```
+git add .
+git commit -m "<ข้อความ>"
+git push origin <main หรือ master>
+```
+
+เลือกทั้งหมด
+```
+git add .
+```
+
+เลือกเฉพาะ
+```
+git add <ชื่อไฟล์>
+```
+
+การอัดไฟล์และใส่รายละเอียด
+```
+git commit -m "<ข้อความ>"
+```
+
+การส่งข้อมูลขึ้น Github
+```
+git push origin <main หรือ master>
+```
+
