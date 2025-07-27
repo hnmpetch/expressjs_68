@@ -35,6 +35,22 @@ npm install express sequelize mysql2
 > [!CAUTION]
 > ควรเข้าไปในโฟลเดอร์ที่จะติดตั้งก่อน จึงจะใช้งาน `npm install`
 
+4. สร้าง ฐานข้อมูล และ table `users` และ `product`
+โดยการเปิด exampp และ กด start ที่ apache และ mysql. 
+กดที่ admin ตรง mysql และไปที่หัวข้อ database สร้าง database ชื่อ `my_database`
+สร้าง table ชื่อ `users`
+
+ตั้งค่าตามตัวอย่าง
+
+![Users Table](/asset/users_table.png)
+
+สร้าง table ชื่อ `product`
+
+ตั้งค่าตามตัวอย่าง
+
+![Users Table](/asset/product_table.png)
+
+
 4. เปิดเซิฟเวอร์
 ```
 npm run dev
