@@ -62,6 +62,9 @@ npm run dev
 > [!WARNING]
 > `npm` สามารถใช้ได้แค่ใน `command promt` ไม่สามารถใช้งานได้ใน `power shell`
 
+> [!TIP]
+> สามารถทดสอบได้โดยการเปิดไปที่ Insomnia หรือ Postman กด New http request ในช่อง URL ใส่ `http://127.0.0.1:3000/api/users/`
+
 ## โครงสร้างไฟล์
 
 โครงสร้างไฟล์อ้างอิงจากรูปแบบ MVC
