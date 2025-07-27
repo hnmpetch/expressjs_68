@@ -2,7 +2,7 @@ const {DataTypes} = require('sequelize');
 const {sequelize} = require('../database.js');
 
 
-const product = sequelize.define("product", {
+const Product = sequelize.define("product", {
     name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -48,4 +48,6 @@ const product = sequelize.define("product", {
 })
 
 
-module.exports = product;
+module.exports = {
+    Product
+}

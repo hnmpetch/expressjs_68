@@ -22,6 +22,7 @@ async function getUsers(req, res){
 }
 
 
+
 async function registerUser(req, res) {
     const {name, email} = req.body;
     
