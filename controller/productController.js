@@ -47,7 +47,7 @@ async function registerProduct(req, res) {
         update_at: (new Date).toString()
     })
 
-    return res.send("Success")
+    return res.json({"message": "Success"})
 }
 
 async function deleteProduct(req, res) {
@@ -74,7 +74,7 @@ async function deleteProduct(req, res) {
         }
     })
 
-    return res.send("Success")
+    return res.json({"message": "Success"})
 }
 
 async function updateProduct(req, res) {
@@ -131,7 +131,7 @@ async function updateProduct(req, res) {
         })
     }
 
-    return res.send("Success")
+    return res.json({"message": "Success"})
 
     
 }

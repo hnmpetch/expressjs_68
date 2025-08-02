@@ -63,7 +63,7 @@ async function registerUser(req, res) {
         return res.status(404).send("Fail to register user");
     }
 
-    return res.send("Success")
+    return res.json({"message": "Success"})
 }
 
 async function deleteUser(req, res) {
@@ -97,7 +97,7 @@ async function deleteUser(req, res) {
         return res.status(404).send("Fail to delete user");
     }
 
-    return res.send("Success")
+    return res.json({"message": "Success"})
 }
 
 module.exports = {
